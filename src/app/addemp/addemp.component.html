@@ -1,0 +1,56 @@
+
+<div class="container">
+  <div class="signup-form">
+    <form [formGroup]="myreact">
+      <h2>Add Employee</h2>
+      <p class="hint-text">Add your employee details.</p>
+          <div class="form-group">
+        <div class="row">
+         
+          <div class="col"><input formControlName="firstname" type="text" class="form-control" name="first_name" placeholder="First Name" required="required">
+            <small class="text-danger" *ngIf="!myreact.get('firstname').valid && myreact.get('firstname').touched">This Field is required</small>
+        </div>
+         
+          <div class="col"><input formControlName="lastname" type="text" class="form-control" name="last_name" placeholder="Last Name" required="required">
+            <small class="text-danger" *ngIf="!myreact.get('lastname').valid && myreact.get('lastname').touched">This Field is required</small>
+
+          </div>
+        
+        </div>        	
+          </div>
+
+          <div class="form-group">
+          
+            <input formControlName="email" type="email" class="form-control" name="email" placeholder="Email" required="required">
+            <small class="text-danger" *ngIf="!myreact.get('email').valid && myreact.get('email').touched">This Field is required</small>
+          
+          </div>
+      <div class="form-group">
+          
+        <input formControlName="Address" type="text" class="form-control" name="Address" placeholder="Address" required="required">
+        <small class="text-danger" *ngIf="!myreact.get('Address').valid && myreact.get('Address').touched">This Field is required</small>
+        
+      </div>    
+      
+      <div class="form-group">
+      
+        <input formControlName="phonenumber" type="text" class="form-control" name="Address" placeholder="Pin code" required="required">
+        <small class="text-danger" *ngIf="!myreact.get('phonenumber').valid && myreact.get('phonenumber').touched">This Field is required</small>
+      
+      </div>      
+      <br>
+      <div class="form-group">
+      
+        <button (click)="onSubmit()"
+        [disabled]="myreact.invalid" type="submit" class="btn btn-success btn-lg btn-block">Save</button>
+      
+      </div>
+    </form>
+
+  </div>
+
+  <div class="d-flex justify-content-center" *ngIf="success">
+    <div class="spinner-border" role="status">
+      <span class="sr-only"></span>
+    </div>
+  </div>

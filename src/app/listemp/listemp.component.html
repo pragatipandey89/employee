@@ -1,0 +1,56 @@
+<h2 class="heading">Employee List</h2>
+
+<div class="d-inline-flex" *ngFor="let emp of employees">
+  <div class="container ">
+    <!-- <div class="row"> -->
+    <div >
+      <div class=" pp card m-b-25">
+        <div class="card-body">
+          <div class="col-9">
+            <a href=""
+              ><img
+                src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                alt=""
+                class="img-fluid rounded-circle w-60"
+            /></a>
+          </div>
+          <div class="col-12 card-title align-self-center mb-0">
+            <h5>{{ emp.firstname }} {{ emp.lastname }}</h5>
+            <p>   {{ emp.address }} </p>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <i class="fa fa-envelope float-right"></i>Email :
+            <a href="#">{{ emp.emailId }}</a>
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-phone float-right"></i>Pincode :
+            {{ emp.phonenumber }}
+          </li>
+        </ul>
+        <div class="card-body">
+          <div class="float-right btn-group btn-group-sm">
+            <a
+              class="btn tooltips"
+              data-placement="top"
+              data-toggle="tooltip"
+              data-original-title="Edit"
+              (click)="editpage(emp)"
+              ><i class="fa fa-pencil edit"></i>
+            </a>
+            <a
+              class="btn delete tooltips"
+              data-placement="top"
+              data-toggle="tooltip"
+              data-original-title="Delete"
+              (click)="deleteemp(emp.usersignupid)"
+              ><i class="fa fa-times"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->

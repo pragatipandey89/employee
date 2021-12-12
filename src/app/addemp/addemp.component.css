@@ -1,0 +1,10 @@
+.container{
+    margin:40px auto;
+}
+.signup-form{
+    width: 80%;
+    margin: 0 auto;
+}
+input{
+    margin: 10px 12px;
+}
